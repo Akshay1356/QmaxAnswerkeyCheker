@@ -104,18 +104,16 @@ export const DesktopSidebar: React.FC = () => {
         <div className="p-4 border-b border-slate-200 flex items-center justify-between">
           {!isSidebarCollapsed ? (
             <div>
-              <div className="flex items-center gap-1.5">
-                <span className="font-sans font-extrabold text-base text-red-600 tracking-tight">
-                  Q
-                </span>
-                <span className="font-sans font-bold text-base text-slate-900 tracking-tight">
-                  smart
-                </span>
-                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-red-50 text-red-600 border border-red-200 ml-1">
+              <div className="flex items-center gap-2">
+                <div className="flex items-baseline font-sans tracking-tight">
+                  <span className="font-black text-xl text-red-600">Q</span>
+                  <span className="font-extrabold text-xl text-slate-900">smart</span>
+                </div>
+                <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-red-50 text-red-600 border border-red-200">
                   PRO
                 </span>
               </div>
-              <div className="text-[10px] font-semibold text-slate-500 tracking-wider mt-0.5">
+              <div className="text-[10px] font-bold text-slate-400 tracking-wider mt-0.5 uppercase">
                 QMAX SYSTEMS
               </div>
             </div>

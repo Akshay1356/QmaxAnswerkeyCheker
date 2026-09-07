@@ -55,7 +55,7 @@ export const OperationsDashboard: React.FC<OperationsDashboardProps> = ({ onOpen
               </span>
             </div>
             <h1 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-              Q<span className="text-red-600">smart</span>
+              <span className="text-red-600">Q</span>smart
             </h1>
             <p className="text-xs text-slate-600 mt-0.5 max-w-xl">
               AI-powered handwritten technical answer sheet evaluation system for Qmax Systems.
