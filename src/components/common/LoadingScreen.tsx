@@ -12,16 +12,16 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
 
   useEffect(() => {
     const startTime = Date.now();
-    const duration = 3200; // 3.2s total smooth transformation flow
+    const duration = 4800; // 4.8s relaxed, smooth transformation flow
 
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
       const currentProgress = Math.min(100, Math.round((elapsed / duration) * 100));
       setProgress(currentProgress);
 
-      if (currentProgress < 42) {
+      if (currentProgress < 44) {
         setStage('qmax');
-      } else if (currentProgress >= 42 && currentProgress < 52) {
+      } else if (currentProgress >= 44 && currentProgress < 54) {
         setStage('morphing');
       } else {
         setStage('qsmart');
@@ -32,7 +32,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         setIsFadingOut(true);
         setTimeout(() => {
           onComplete();
-        }, 700);
+        }, 800);
       }
     }, 25);
 
@@ -58,7 +58,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-white transition-all duration-700 ease-out select-none ${
+      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-white transition-all duration-1000 ease-out select-none ${
         isFadingOut ? 'opacity-0 scale-105 pointer-events-none' : 'opacity-100 scale-100'
       }`}
     >
@@ -76,10 +76,10 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           <div className="absolute w-24 h-24 rounded-2xl border border-red-500/30 animate-pulse" />
           
           {/* Rotating Subtle Dash Ring */}
-          <div className="absolute w-28 h-28 rounded-full border border-dashed border-slate-300 animate-spin [animation-duration:12s]" />
+          <div className="absolute w-28 h-28 rounded-full border border-dashed border-slate-300 animate-spin [animation-duration:14s]" />
 
           {/* Center Brand Badge with Stage Morph */}
-          <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-red-600 to-red-700 shadow-xl shadow-red-600/30 flex items-center justify-center border border-red-400/40 transform transition-all duration-500">
+          <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-red-600 to-red-700 shadow-xl shadow-red-600/30 flex items-center justify-center border border-red-400/40 transform transition-all duration-700">
             <span className="text-4xl font-black text-white font-sans tracking-tighter drop-shadow-md">
               Q
             </span>
@@ -92,7 +92,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           
           {/* STAGE 1: QMAX SYSTEMS (Visible when stage === 'qmax') */}
           <div
-            className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ease-in-out ${
+            className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-1000 ease-in-out ${
               stage === 'qmax'
                 ? 'opacity-100 translate-y-0 scale-100 filter-none'
                 : 'opacity-0 -translate-y-4 scale-95 pointer-events-none blur-xs'
@@ -112,7 +112,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
 
           {/* STAGE 2: Qsmart (Visible when stage === 'qsmart' or morphing into it) */}
           <div
-            className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ease-in-out ${
+            className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-1000 ease-in-out ${
               stage === 'qsmart'
                 ? 'opacity-100 translate-y-0 scale-100 filter-none'
                 : 'opacity-0 translate-y-4 scale-95 pointer-events-none blur-xs'
