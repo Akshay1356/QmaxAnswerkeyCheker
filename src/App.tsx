@@ -13,6 +13,7 @@ import { ResultsWorkspace } from './components/results/ResultsWorkspace';
 import { ReportsWorkspace } from './components/reports/ReportsWorkspace';
 import { SettingsWorkspace } from './components/settings/SettingsWorkspace';
 import { MobileCameraScanner } from './components/candidates/MobileCameraScanner';
+import { LoadingScreen } from './components/common/LoadingScreen';
 
 const MainApplicationContent: React.FC = () => {
   const { activeTab } = useAssessment();
@@ -60,8 +61,11 @@ const MainApplicationContent: React.FC = () => {
 };
 
 export function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <AssessmentProvider>
+      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       <div className="min-h-screen flex bg-slate-50 text-slate-900 font-sans antialiased">
         <DesktopSidebar />
         <MainApplicationContent />
