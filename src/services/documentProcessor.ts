@@ -63,7 +63,7 @@ export class DocumentProcessor {
     }
     ctx.font = '9px "JetBrains Mono", monospace';
     ctx.fillStyle = '#475569';
-    ctx.fillText(`ATLAS-DOC-${candidateId.slice(-6)}`, canvas.width - 240, 92);
+    ctx.fillText(`QSMART-DOC-${candidateId.slice(-6)}`, canvas.width - 240, 92);
 
     // Header divider line
     ctx.strokeStyle = '#0F172A';
@@ -187,7 +187,7 @@ export class DocumentProcessor {
     ctx.font = '10px "Inter", sans-serif';
     ctx.fillText('QMAX SYSTEMS EVALUATION ENGINE • STRICTLY CONFIDENTIAL ASSESSMENT DATA', 80, canvas.height - 25);
     ctx.font = '10px "JetBrains Mono", monospace';
-    ctx.fillText(`ATLAS-ENGINE-V2 • SHA256-${candidateId.slice(-6)}`, canvas.width - 320, canvas.height - 25);
+    ctx.fillText(`QSMART-ENGINE-V2 • SHA256-${candidateId.slice(-6)}`, canvas.width - 320, canvas.height - 25);
 
     return { canvas, regions };
   }

@@ -23,7 +23,7 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error('QMAX ATLAS Uncaught Runtime Error:', error, errorInfo);
+    console.error('Qsmart Uncaught Runtime Error:', error, errorInfo);
     this.setState({ errorInfo });
   }
 
@@ -50,7 +50,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 <AlertTriangle className="w-6 h-6 text-red-400 animate-pulse" />
               </div>
               <div>
-                <h1 className="text-lg font-bold text-slate-100">QMAX ATLAS • Runtime Error Recovered</h1>
+                <h1 className="text-lg font-bold text-slate-100">Qsmart • Runtime Error Recovered</h1>
                 <p className="text-xs text-red-400 font-medium">An unexpected exception occurred during application execution</p>
               </div>
             </div>

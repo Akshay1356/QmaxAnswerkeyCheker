@@ -89,7 +89,7 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
 
   const [answerKey, setAnswerKey] = useState<AnswerKey>(() => {
     try {
-      const saved = localStorage.getItem('qmax_atlas_v3_key');
+      const saved = localStorage.getItem('qsmart_key') || localStorage.getItem('qmax_atlas_v3_key');
       if (saved) {
         const parsed = JSON.parse(saved);
         if (parsed && Array.isArray(parsed.questions) && parsed.questions.length > 0) {
@@ -104,7 +104,7 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
 
   const [candidates, setCandidates] = useState<CandidateSubmission[]>(() => {
     try {
-      const saved = localStorage.getItem('qmax_atlas_v3_candidates');
+      const saved = localStorage.getItem('qsmart_candidates') || localStorage.getItem('qmax_atlas_v3_candidates');
       if (saved) {
         const parsed = JSON.parse(saved);
         if (
@@ -126,7 +126,7 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
 
   const [settings, setSettings] = useState<AssessmentSettings>(() => {
     try {
-      const saved = localStorage.getItem('qmax_atlas_v3_settings');
+      const saved = localStorage.getItem('qsmart_settings') || localStorage.getItem('qmax_atlas_v3_settings');
       if (saved) {
         const parsed = JSON.parse(saved);
         if (parsed && typeof parsed.defaultTolerancePercent === 'number') {
@@ -157,7 +157,7 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
 
   useEffect(() => {
     try {
-      localStorage.setItem('qmax_atlas_v3_key', JSON.stringify(answerKey));
+      localStorage.setItem('qsmart_key', JSON.stringify(answerKey));
     } catch (e) {
       console.error('Failed to save answer key to localStorage:', e);
     }
@@ -165,7 +165,7 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
 
   useEffect(() => {
     try {
-      localStorage.setItem('qmax_atlas_v3_candidates', JSON.stringify(candidates));
+      localStorage.setItem('qsmart_candidates', JSON.stringify(candidates));
     } catch (e) {
       console.error('Failed to save candidates to localStorage:', e);
     }
@@ -173,7 +173,7 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
 
   useEffect(() => {
     try {
-      localStorage.setItem('qmax_atlas_v3_settings', JSON.stringify(settings));
+      localStorage.setItem('qsmart_settings', JSON.stringify(settings));
     } catch (e) {
       console.error('Failed to save settings to localStorage:', e);
     }
@@ -569,6 +569,9 @@ export const AssessmentProvider: React.FC<{ children: React.ReactNode }> = ({ ch
   };
 
   const resetAllData = () => {
+    localStorage.removeItem('qsmart_key');
+    localStorage.removeItem('qsmart_candidates');
+    localStorage.removeItem('qsmart_settings');
     localStorage.removeItem('qmax_atlas_v3_key');
     localStorage.removeItem('qmax_atlas_v3_candidates');
     localStorage.removeItem('qmax_atlas_v3_settings');

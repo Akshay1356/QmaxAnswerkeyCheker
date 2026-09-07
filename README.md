@@ -1,6 +1,6 @@
-﻿# QMAX ATLAS — Technical Answer Sheet Evaluation System
+﻿# Qsmart — Technical Answer Sheet Evaluation System
 
-**QMAX ATLAS** is an AI-powered technical answer sheet evaluation system engineered for fast, accurate, and automated grading of candidate assessment answer sheets.
+**Qsmart** is an AI-powered technical answer sheet evaluation system engineered for fast, accurate, and automated grading of candidate assessment answer sheets.
 
 ## 🚀 Key Features
 

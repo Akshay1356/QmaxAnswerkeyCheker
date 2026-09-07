@@ -3,13 +3,13 @@ import { CandidateSubmission, AnswerKey } from '../types';
 
 export class ExcelExportService {
   /**
-   * Generates the multi-sheet Excel report adhering to QMAX ATLAS specifications.
+   * Generates the multi-sheet Excel report adhering to Qsmart specifications.
    * Supports 3 Question Paper Sets (Set A, Set B, Set C) and ensures all 20 questions are itemized.
    */
   static exportAssessmentWorkbook(
     candidates: CandidateSubmission[],
     answerKey: AnswerKey,
-    filename: string = `QMAX_ATLAS_Consolidated_Evaluation_${new Date().toISOString().slice(0, 10)}.xlsx`
+    filename: string = `Qsmart_Consolidated_Evaluation_${new Date().toISOString().slice(0, 10)}.xlsx`
   ) {
     const wb = XLSX.utils.book_new();
     const evaluatedCandidates = candidates.filter(c => c.evaluationResult);

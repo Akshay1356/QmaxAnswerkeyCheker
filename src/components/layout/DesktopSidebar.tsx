@@ -106,10 +106,10 @@ export const DesktopSidebar: React.FC = () => {
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="font-sans font-extrabold text-base text-red-600 tracking-tight">
-                  QMAX
+                  Q
                 </span>
                 <span className="font-sans font-bold text-base text-slate-900 tracking-tight">
-                  ATLAS
+                  smart
                 </span>
                 <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-red-50 text-red-600 border border-red-200 ml-1">
                   PRO
