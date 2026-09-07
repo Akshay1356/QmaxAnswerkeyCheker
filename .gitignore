@@ -8,8 +8,6 @@ dist
 build
 
 # Environment variables and secrets
-.env
-.env.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -23,7 +21,6 @@ lerna-debug.log*
 
 # Editor & OS files
 .idea
-.vscode
 *.suo
 *.ntvs*
 *.njsproj
@@ -35,3 +32,4 @@ Thumbs.db
 # Scratch and temporary scripts
 scratch/
 writer_helper.cjs
+config.bat
